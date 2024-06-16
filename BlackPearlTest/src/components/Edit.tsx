@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { User } from './User';
 import '../App.css';
 
@@ -8,29 +8,23 @@ interface EditProps {
 }
 
 const Edit: React.FC<EditProps> = ({ selectedUser, onSave }) => {
-  const [editableUser, setEditableUser] = useState<User>(selectedUser);
-
-  useEffect(() => {
-    setEditableUser(selectedUser);
-  }, [selectedUser]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    const updatedUser = { ...editableUser, [name]: value };
-    setEditableUser(updatedUser);
+    const updatedUser = { ...selectedUser, [name]: value };
     onSave(updatedUser);
   };
 
   return (
     <div className="edit">
-      <h2>{editableUser.name}</h2>
+      <h2>{selectedUser.name}</h2>
       <div className='input'>
         <label htmlFor="address1">Address Line 1:</label>
         <input
           type="text"
           id="address1"
           name="address1"
-          value={editableUser.address1}
+          value={selectedUser.address1}
           onChange={handleInputChange}
         />
       </div>
@@ -40,7 +34,7 @@ const Edit: React.FC<EditProps> = ({ selectedUser, onSave }) => {
           type="text"
           id="address2"
           name="address2"
-          value={editableUser.address2}
+          value={selectedUser.address2}
           onChange={handleInputChange}
         />
       </div>
@@ -50,7 +44,7 @@ const Edit: React.FC<EditProps> = ({ selectedUser, onSave }) => {
           type="text"
           id="phNum"
           name="phNum"
-          value={editableUser.phNum}
+          value={selectedUser.phNum}
           onChange={handleInputChange}
         />
       </div>
@@ -60,7 +54,7 @@ const Edit: React.FC<EditProps> = ({ selectedUser, onSave }) => {
           type="text"
           id="mobNum"
           name="mobNum"
-          value={editableUser.mobNum}
+          value={selectedUser.mobNum}
           onChange={handleInputChange}
         />
       </div>
