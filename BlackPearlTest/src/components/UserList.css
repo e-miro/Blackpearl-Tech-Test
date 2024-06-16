@@ -1,0 +1,23 @@
+.user-list {
+    max-height: 80vh;
+    width: 15vw;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding: 10px; 
+    padding-left: 3vw;
+    margin-left: 3vw;
+    background-color: #f9f9f9; 
+  }
+
+  ul{
+    list-style-type: none;
+  }
+  
+  .user-list li {
+    padding: 10px 0; 
+    border-bottom: 1px solid; 
+    font-size: 18pt;
+  }
+  .user-list li.selected {
+    background-color: #f0f0f0;
+  }

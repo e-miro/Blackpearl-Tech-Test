@@ -1,0 +1,31 @@
+.mainContent{
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  color: #707070;
+}
+.header{
+  height: 15vh;
+  padding-left: 3vw;
+  border-bottom: 1px solid;
+  color: #707070; 
+}
+
+.display-pane{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 85vw;
+}
+
+.display{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.input{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
